@@ -13,14 +13,8 @@ function pressMe() {
     //We getting the button the use clicked with the keyword this
     let buttonClicked = this.innerHTML;
 
-    //adding css style clickeed
-    this.classList.add("pressed");
+    clickAnimation(this);
 
-    //Timer to remove after clicking
-    setTimeout(()=> {
-        this.classList.remove("pressed");
-    },100);
- 
     //For every letter that is clicked it should play its targeted sound
     switch (buttonClicked) {
         case "w":
@@ -62,6 +56,17 @@ function pressMe() {
             console.log("Error playing sound");
             break;
     }
+}
+
+function clickAnimation(button){
+    //adding css style clickeed
+    button.classList.add("pressed");
+
+    //Timer to remove after clicking
+    setTimeout(()=> {
+        button.classList.remove("pressed");
+    },100);
+ 
 }
 
 
